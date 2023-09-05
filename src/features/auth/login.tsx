@@ -40,7 +40,7 @@ export default function Login() {
                 name="email"
                 label="Email"
                 rules={[
-                    { required: true, type: "email", message: "Insira um email válido" }
+                    { required: true, type: "email", message: "Insira seu e-mail" }
                 ]}
             >
                 <Input placeholder="Digite seu email"/>
@@ -49,7 +49,7 @@ export default function Login() {
             <Form.Item
                 name="senha"
                 label="Senha"
-                rules={[{ required: true, message: "Insinha sua senha" }]}
+                rules={[{required: true, message: "Insira sua senha"}]}
             >
                 <Input.Password placeholder="Digite sua senha" />
             </Form.Item>
