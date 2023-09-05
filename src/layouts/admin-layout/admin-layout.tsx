@@ -33,7 +33,7 @@ function AdminLayout({ menuItens }: LayoutProps) {
                 <div className="sider-logo">
                     <img
                         src="/logo.png"
-                        alt="Logo SAtCare"
+                        alt="Logo estoque"
                     />
                 </div>
                 <Menu mode="inline" onSelect={({ key }) => navigate(key)} items={menuItens} />
@@ -42,7 +42,7 @@ function AdminLayout({ menuItens }: LayoutProps) {
                 <Content style={{ margin: '16px' }}>
                     <Outlet />
                 </Content>
-                <Footer id='footerPrincipal' style={{ textAlign: 'center', }}>SATCare ©2023</Footer>
+                <Footer id='footerPrincipal' style={{ background: '#008e87', textAlign: 'center', }}>SATCare ©2023</Footer>
             </Layout>
         </Layout>
     );

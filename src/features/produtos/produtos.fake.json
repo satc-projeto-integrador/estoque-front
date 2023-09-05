@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "descricao": "Teste 1",
+      "valor": 10.00,
+      "tipo": "Ração"
+    },
+    {
+      "id": 2,
+      "descricao": "Teste 2",
+      "valor": 10.00,
+      "tipo": "Remédio"
+    },
+    {
+      "id": 3,
+      "descricao": "Teste 3",
+      "valor": 10.00,
+      "tipo": "Plantio"
+    }   
+]

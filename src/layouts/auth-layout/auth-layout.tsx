@@ -28,7 +28,7 @@ function AuthLayout() {
                     <Outlet />
                 </Col>
             </Content>
-            <Footer id='footerPrincipal' style={{ textAlign: 'center', }}>SATCare ©2023</Footer>
+            <Footer id='footerPrincipal' style={{ background: '#008e87', textAlign: 'center', }}>SATCare ©2023</Footer>
         </Layout>
     );
 }
