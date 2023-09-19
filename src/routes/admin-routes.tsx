@@ -1,7 +1,6 @@
 import { Route } from "react-router-dom";
 import AdminLayout from "../layouts/admin-layout/admin-layout";
 import ListaUsuarios from "../features/usuarios/components/cadastro-usuarios/lista-usuarios";
-import CadastroUsuario from "../features/usuarios/components/cadastro-usuarios/cadastro";
 import Calendario from "../features/usuarios/components/calendar/calendario";
 import { CalendarOutlined, HeartOutlined, HomeOutlined, LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import NotFoundRedirect from "./not-found-redirect";
@@ -20,7 +19,7 @@ export default function AdminRoutes() {
     return (
         <Route element={<AdminLayout menuItens={menuItens} />}>
             <Route path='home' element={<h1>Home page</h1>} />
-            <Route path='usuarios' element={<CadastroUsuario />} />
+            <Route path='usuarios' element={<ListaUsuarios />} />
             {/* <Route path='cadastro' element={<CadastroUsuario />} /> */}
             {/* <Route path='consulta' element={<NovaConsulta />} /> */}
             <Route path='profissionais' element={<ListaProfissionais />} />
