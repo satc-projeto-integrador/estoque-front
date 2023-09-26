@@ -9,12 +9,12 @@
 <br>
 
 ## Integrantes
-* [Alex Farias]
+* [Alex Farias](https://github.com/Alex-Farias)
 * [Guilherme Machado Darabas](https://github.com/gmdarabas)
 * [Paulo Roberto Simão](https://github.com/paulorsimao)
 * [Rubens Scotti Junior](https://github.com/rubensscotti)
 * [Stephan  Anthony  Marques](https://github.com/stephan-anthony)
-* [Vitor Henrique Pereira]
+* [Vitor Henrique Pereira](https://github.com/vitorhenriquepereira)
 
 <br>
 
