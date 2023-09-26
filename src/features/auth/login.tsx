@@ -49,7 +49,7 @@ export default function Login() {
             <Form.Item
                 name="senha"
                 label="Senha"
-                rules={[{ required: true, message: "Insinha sua senha" }]}
+                rules={[{required: true, message: "Insira sua senha"}]}
             >
                 <Input.Password placeholder="Digite sua senha" />
             </Form.Item>

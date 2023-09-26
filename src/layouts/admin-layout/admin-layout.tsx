@@ -42,7 +42,7 @@ function AdminLayout({ menuItens }: LayoutProps) {
                 <Content style={{ margin: '16px' }}>
                     <Outlet />
                 </Content>
-                <Footer id='footerPrincipal' style={{ background: '#008e87', textAlign: 'center', }}>SATCare ©2023</Footer>
+                <Footer id='footerPrincipal' style={{ background: '#008e87', textAlign: 'center', }}>Gestão estoque ©2023</Footer>
             </Layout>
         </Layout>
     );

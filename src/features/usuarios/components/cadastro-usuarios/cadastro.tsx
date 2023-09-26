@@ -38,19 +38,19 @@ const CadastroUsuario: React.FC = () => (
         </Form.Item>
 
         <Form.Item
-            label="Telefone"
-            name="telefone"
-            rules={[{ required: true, message: 'Por favor insira o telefone!' }]}
-        >
-            <InputTelefone placeholder="Digite seu telefone" />
-        </Form.Item>
-
-        <Form.Item
             label="Senha"
             name="senha"
             rules={[{ required: true, message: 'Por favor insira a senha!' }]}
         >
             <Input.Password placeholder='Digite sua senha' />
+        </Form.Item>
+
+        <Form.Item
+            label="Telefone"
+            name="telefone"
+            rules={[{ required: true, message: 'Por favor insira o telefone!' }]}
+        >
+            <InputTelefone placeholder="Digite seu telefone" />
         </Form.Item>
 
         <Form.Item>

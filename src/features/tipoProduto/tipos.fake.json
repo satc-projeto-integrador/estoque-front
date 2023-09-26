@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "tipo": "Ração"
+    },
+    {
+      "id": 2,
+      "tipo": "Remédio"
+    },
+    {
+      "id": 3,
+      "tipo": "Plantio"
+    }   
+]

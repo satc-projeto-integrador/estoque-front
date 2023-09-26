@@ -9,7 +9,7 @@ type Props = {
     onFinish?: (cadastrou: boolean) => void
 }
 
-export default function CadastroProfissionais({ onFinish, id }: Props) {
+export default function CadastroProduto({ onFinish, id }: Props) {
     const ProdutoContext = useProdutoContext();
     const [form] = useForm()
 
