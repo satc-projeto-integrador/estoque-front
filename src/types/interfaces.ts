@@ -1,10 +1,18 @@
-interface GetOptions {
-    page: number,
-    pageSize: number,
-    filter?: string
+export interface GetPageOptions {
+    page: number;
+    rpp: number;
 }
 
-interface Page<T> {
-    data: Array<T>,
-    totalCount: number
+export interface Page<T> {
+    list: Array<T>;
+    totalCount: number;
+    page: number;
+    rpp: number;
+}
+
+export interface Produto {
+    id: number;
+    descricao: string;
+    valor: number;
+    // tipo: TipoProduto
 }
