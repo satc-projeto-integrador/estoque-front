@@ -54,10 +54,10 @@ const CadastroUsuario: React.FC = () => (
         </Form.Item>
 
         <Form.Item>
-                <Button type="primary" htmlType="submit" style={{width: '100%'}}>
+            <Button type="primary" htmlType="submit" style={{width: '100%'}}>
                     Cadastra-se
-                </Button>
-                <Link to={'/login'}>Já possui conta? Faça login</Link>
+            </Button>
+            <Link to={'/login'}>Já possui conta? Faça login</Link>
         </Form.Item>
     </Form>
 );

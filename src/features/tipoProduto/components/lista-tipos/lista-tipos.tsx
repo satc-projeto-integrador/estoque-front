@@ -102,4 +102,4 @@ function Lista() {
 
 export default function ListaTipos() {
     return <TipoProvider><Lista /></TipoProvider>
-};
+}

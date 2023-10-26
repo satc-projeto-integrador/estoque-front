@@ -72,7 +72,7 @@ const InputTelefone = ({ onChange, value, ...props }: Props) => {
 
     return (
         <Input
-           addonBefore={prefixSelector}
+            addonBefore={prefixSelector}
             value={value}
             onChange={onLocalChange}
             {...props}

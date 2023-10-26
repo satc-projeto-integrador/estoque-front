@@ -2,7 +2,7 @@ import tipos from '../tipos.fake.json'
 
 export interface ITipos {
     id: number
-    tipo: String
+    tipo: string
 }
 
 export default class tiposService {

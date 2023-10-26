@@ -112,4 +112,4 @@ function Lista() {
 
 export default function ListaProfissionais() {
     return <ProfisisonalProvider><Lista /></ProfisisonalProvider>
-};
+}

@@ -1,12 +1,12 @@
 import { GetPageOptions, Page, Produto } from '../../../types/interfaces';
 import apiBackend from '../../api';
 
-export type ListarProdutosResult = Page<Produto>;
-export type ListarProdutosParams = GetPageOptions & {
+export type listProdutosResult = Page<Produto>;
+export type listProdutosParams = GetPageOptions & {
     q?: string;
 };
 
-export const listarProdutos = async (params: ListarProdutosParams): Promise<ListarProdutosResult> => {
+export const listProdutos = async (params: listProdutosParams): Promise<listProdutosResult> => {
     const result = await apiBackend.get('/api/v1/produtos', { params });
     return result.data;
 };

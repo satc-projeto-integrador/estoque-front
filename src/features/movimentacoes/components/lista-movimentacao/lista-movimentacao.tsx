@@ -142,4 +142,4 @@ function ListaMovimentacao() {
 
 export default function ListaMovimentacao() {
     return <ProdutoProvider><ListaMovimentacao /></ProdutoProvider>
-};
+}
