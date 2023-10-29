@@ -14,5 +14,10 @@ export interface Produto {
     id: number;
     descricao: string;
     valor: number;
-    // tipo: TipoProduto
+    tipoProduto: TipoProduto;
+}
+
+export interface TipoProduto {
+    id: number;
+    descricao: string;
 }

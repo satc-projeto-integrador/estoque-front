@@ -1,23 +1,11 @@
-import { Button, Form, Input, InputNumber, Modal, Select, Skeleton } from 'antd';
-import { useEffect } from 'react';
+import { Button, Form, Input, InputNumber, Modal, Skeleton } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import useGetProduto from '../../../../api-data/produtos/get-one/hook';
 import useCreateProduto from '../../../../api-data/produtos/create/hook';
 import { Produto } from '../../../../types/interfaces';
 import useUpdateProduto from '../../../../api-data/produtos/update/hook';
 import { useParams } from 'react-router-dom';
-
-// todo carregar do back
-enum TipoProduto {
-    RACAO = 'Ração',
-    REMEDIO = 'Remédio',
-    PLANTIO = 'Plantio',
-}
-
-const tipoProdutoOptions = Object.values(TipoProduto).map((tipo) => ({
-    label: tipo,
-    value: tipo,
-}));
+import SelectTipoProduto from '../../../tipos-produto/components/select/select-tipos-produto';
 
 type Props = {
     title: string;
@@ -36,19 +24,13 @@ export default function CadastroProduto({ title, open, onClose, onConfirm }: Pro
     const { data: produto, isLoading, isFetched } = useGetProduto(Number(id));
 
     const onSubmit = async (values: any) => {
+        values = {
+            ...values,
+            tipoProduto: Number.isInteger(values.tipoProduto) ? values.tipoProduto : values.tipoProduto?.value,
+        };
         const produto = id ? await updateProduto(Number(id), values) : await createProduto(values);
         onConfirm?.(produto);
     };
-
-    const loadForm = (dados: any) => {
-        form.setFieldsValue(dados);
-    };
-
-    useEffect(() => {
-        if (isFetched) {
-            loadForm(produto);
-        }
-    }, [produto]);
 
     return (
         <>
@@ -73,7 +55,10 @@ export default function CadastroProduto({ title, open, onClose, onConfirm }: Pro
                         id="form-produto"
                         name="basic"
                         layout="vertical"
-                        initialValues={{ remember: true }}
+                        initialValues={{
+                            ...produto,
+                            tipoProduto: { value: produto?.tipoProduto?.id, label: produto?.tipoProduto?.descricao },
+                        }}
                         onFinish={onSubmit}
                         autoComplete="off"
                     >
@@ -95,10 +80,10 @@ export default function CadastroProduto({ title, open, onClose, onConfirm }: Pro
 
                         <Form.Item
                             label="Tipo de Produto"
-                            name="tipo"
+                            name="tipoProduto"
                             rules={[{ required: true, message: 'Por favor insira o tipo de produto!' }]}
                         >
-                            <Select placeholder="Selecione" options={tipoProdutoOptions} />
+                            <SelectTipoProduto />
                         </Form.Item>
                     </Form>
                 </Modal>
