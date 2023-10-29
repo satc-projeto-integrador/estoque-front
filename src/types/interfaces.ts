@@ -45,3 +45,9 @@ export interface Movimentacao {
     tipoMovimentacao: { id: number } & Partial<TipoMovimentacao>;
     movimentacaoProdutos: MovimentacaoProduto[]
 }
+
+export interface SaldoProduto {
+    id: number;
+    produto: Produto;
+    quantidade: number;
+}

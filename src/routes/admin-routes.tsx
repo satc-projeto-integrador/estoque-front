@@ -1,13 +1,21 @@
 import { Route } from 'react-router-dom';
 import AdminLayout, { MenuOptions } from '../layouts/admin-layout/admin-layout';
 import ListaUsuarios from '../features/usuarios/components/cadastro-usuarios/lista-usuarios';
-import { HomeOutlined, LogoutOutlined, UserOutlined, ShoppingCartOutlined, SwapOutlined } from '@ant-design/icons';
+import {
+    HomeOutlined,
+    LogoutOutlined,
+    UserOutlined,
+    ShoppingCartOutlined,
+    SwapOutlined,
+    DropboxOutlined,
+} from '@ant-design/icons';
 import NotFoundRedirect from './not-found-redirect';
 import { Logout } from '../features/auth/logout';
 import PageProdutos from '../features/produtos/page-produtos';
 import PageTiposProdutos from '../features/tipos-produto/page-tipos-produtos';
 import PageTiposMovimentacao from '../features/tipos-movimentacao/page-tipos-movimentacao';
 import PageMovimentacao from '../features/movimentacoes/page-movimentacao';
+import PageSaldoProduto from '../features/saldo-produtos/page-saldo-produtos';
 
 const menuItens: MenuOptions[] = [
     { key: 'home', label: 'Home', icon: <HomeOutlined /> },
@@ -30,6 +38,7 @@ const menuItens: MenuOptions[] = [
             { key: 'movimentacoes', label: 'Movimentacoes' },
         ],
     },
+    { key: 'saldo-estoque', label: 'Saldo Estoque', icon: <DropboxOutlined /> }, // mudar icone
     { key: 'logout', label: 'logout', icon: <LogoutOutlined /> },
 ];
 
@@ -44,6 +53,7 @@ export default function AdminRoutes() {
             <Route path="produtos/*" element={<PageProdutos />} />
             <Route path="tipos-movimentacao/*" element={<PageTiposMovimentacao />} />
             <Route path="movimentacoes/*" element={<PageMovimentacao />} />
+            <Route path="saldo-estoque" element={<PageSaldoProduto />} />
             <Route path="logout" element={<Logout />} />
             <Route path="*" element={<NotFoundRedirect to="/home" />} />
         </Route>
