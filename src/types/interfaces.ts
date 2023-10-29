@@ -21,3 +21,13 @@ export interface TipoProduto {
     id: number;
     descricao: string;
 }
+
+export interface TipoMovimentacao {
+    id: number;
+    descricao: string;
+}
+
+export enum TipoMovimentacaoEnum {
+    ENTRADA = "Entrada",
+    SAIDA = "Saída",
+}
