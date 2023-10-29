@@ -31,3 +31,17 @@ export enum TipoMovimentacaoEnum {
     ENTRADA = "Entrada",
     SAIDA = "Saída",
 }
+
+export interface MovimentacaoProduto {
+    valor: number;
+    quantidade: number;
+    produto: { id: number }
+}
+
+export interface Movimentacao {
+    id: number;
+    observacao: string;
+    dataMovimentacao: string | Date;
+    tipoMovimentacao: { id: number } & Partial<TipoMovimentacao>;
+    movimentacaoProdutos: MovimentacaoProduto[]
+}

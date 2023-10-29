@@ -7,6 +7,7 @@ import { Logout } from '../features/auth/logout';
 import PageProdutos from '../features/produtos/page-produtos';
 import PageTiposProdutos from '../features/tipos-produto/page-tipos-produtos';
 import PageTiposMovimentacao from '../features/tipos-movimentacao/page-tipos-movimentacao';
+import PageMovimentacao from '../features/movimentacoes/page-movimentacao';
 
 const menuItens: MenuOptions[] = [
     { key: 'home', label: 'Home', icon: <HomeOutlined /> },
@@ -42,6 +43,7 @@ export default function AdminRoutes() {
             <Route path="tipos-produto/*" element={<PageTiposProdutos />} />
             <Route path="produtos/*" element={<PageProdutos />} />
             <Route path="tipos-movimentacao/*" element={<PageTiposMovimentacao />} />
+            <Route path="movimentacoes/*" element={<PageMovimentacao />} />
             <Route path="logout" element={<Logout />} />
             <Route path="*" element={<NotFoundRedirect to="/home" />} />
         </Route>
