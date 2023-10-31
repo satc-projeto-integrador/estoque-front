@@ -47,7 +47,7 @@ function AdminLayout({ menuItens }: LayoutProps) {
                     <Outlet />
                 </Content>
                 <Footer id="footerPrincipal" style={{ background: '#008e87', textAlign: 'center' }}>
-                    Gestão estoque ©2023
+                    Gestão Estoque ©2023
                 </Footer>
             </Layout>
         </Layout>

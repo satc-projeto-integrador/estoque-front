@@ -39,7 +39,7 @@ const menuItens: MenuOptions[] = [
         ],
     },
     { key: 'saldo-estoque', label: 'Saldo Estoque', icon: <DropboxOutlined /> }, // mudar icone
-    { key: 'logout', label: 'logout', icon: <LogoutOutlined /> },
+    { key: 'logout', label: 'Log Out', icon: <LogoutOutlined /> },
 ];
 
 export default function AdminRoutes() {
