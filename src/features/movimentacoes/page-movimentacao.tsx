@@ -9,7 +9,7 @@ import useDeleteMovimentacao from '../../api-data/movimentacao/delete/hook';
 import useListMovimentacao from '../../api-data/movimentacao/list/hook';
 import { Movimentacao } from '../../types/interfaces';
 import CadastroMovimentacao from './components/cadastro-movimentacao/cadastro';
-import { displayDate } from '../../utils';
+import { displayDate, displayMoney } from '../../utils';
 
 export default function PageMovimentacao() {
     const navigate = useNavigate();
@@ -37,9 +37,10 @@ export default function PageMovimentacao() {
         },
         {
             title: 'Valor',
-            dataIndex: 'valor',
+            dataIndex: 'valorTotal',
             width: '20%',
             align: 'center',
+            render: (value) => displayMoney(value),
         },
         {
             title: 'Ações',

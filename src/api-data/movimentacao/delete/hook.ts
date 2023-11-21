@@ -8,12 +8,8 @@ const useDeleteMovimentacao = (options?: Record<string, unknown>) => {
         ...options,
         onSuccess: async () => {
             await queryClient.invalidateQueries('movimentacao');
+            await queryClient.invalidateQueries('saldo');
             notification.success({ message: 'Movimentacao excluída com sucesso' });
-        },
-        onError: (err: Error) => {
-            notification.error({
-                message: `Erro ao excluir Movimentacao`,
-            });
         },
     });
     return (id: number) => mutation.mutateAsync(id);

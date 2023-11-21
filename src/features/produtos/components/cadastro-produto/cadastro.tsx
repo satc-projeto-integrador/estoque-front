@@ -71,19 +71,15 @@ export default function CadastroProduto({ title, open, onClose, onConfirm }: Pro
                         </Form.Item>
 
                         <Form.Item
-                            label="Valor unitario"
-                            name="valor"
-                            rules={[{ required: true, message: 'Por favor insira o valor!' }]}
-                        >
-                            <InputNumber style={{ width: '100%' }} precision={2} />
-                        </Form.Item>
-
-                        <Form.Item
                             label="Tipo de Produto"
                             name="tipoProduto"
                             rules={[{ required: true, message: 'Por favor insira o tipo de produto!' }]}
                         >
                             <SelectTipoProduto />
+                        </Form.Item>
+
+                        <Form.Item label="Quantidade Mínima" name="quantidadeMinima">
+                            <InputNumber style={{ width: '100%' }} precision={2} />
                         </Form.Item>
                     </Form>
                 </Modal>

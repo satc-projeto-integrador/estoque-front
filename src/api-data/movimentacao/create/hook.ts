@@ -9,12 +9,8 @@ const useCreateMovimentacao = (options?: Record<string, unknown>) => {
         ...options,
         onSuccess: async () => {
             await queryClient.invalidateQueries('movimentacao');
+            await queryClient.invalidateQueries('saldo');
             notification.success({ message: 'Movimentacao cadastrado com sucesso' });
-        },
-        onError: (err: Error) => {
-            notification.error({
-                message: `Erro ao cadastrar Movimentacao`,
-            });
         },
     });
     return (data: Movimentacao) => mutation.mutateAsync(data);

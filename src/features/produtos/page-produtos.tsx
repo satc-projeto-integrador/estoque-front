@@ -38,15 +38,9 @@ export default function PageProdutos() {
             width: '40%',
         },
         {
-            title: 'Valor',
-            dataIndex: 'valor',
-            width: '25%',
-            align: 'center',
-        },
-        {
             title: 'Tipo de Produto',
             dataIndex: 'tipoProduto',
-            width: '25%',
+            width: '40%',
             align: 'center',
             render: (_, row) => row.tipoProduto?.descricao || '-',
         },
@@ -61,6 +55,7 @@ export default function PageProdutos() {
                     </TableActions>
                 );
             },
+            align: 'right',
         },
     ];
 
