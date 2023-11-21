@@ -19,6 +19,7 @@ import PageMovimentacao from '../features/movimentacoes/page-movimentacao';
 import PageSaldoProduto from '../features/saldo-produtos/page-saldo-produtos';
 import PageInventario from '../features/inventarios/page-inventarios';
 import PageInventarioProdutos from '../features/inventarios/produtos/page-inventario-produtos';
+import HomePage from '../features/home/home-page';
 
 const menuItens: MenuOptions[] = [
     { key: 'home', label: 'Home', icon: <HomeOutlined /> },
@@ -53,7 +54,7 @@ const menuItens: MenuOptions[] = [
 export default function AdminRoutes() {
     return (
         <Route element={<AdminLayout menuItens={menuItens} />}>
-            <Route path="home" element={<h1>Home page</h1>} />
+            <Route path="home" element={<HomePage />} />
             <Route path="usuarios" element={<ListaUsuarios />} />
             <Route path="tipos-produto/*" element={<PageTiposProdutos />} />
             <Route path="produtos/*" element={<PageProdutos />} />
