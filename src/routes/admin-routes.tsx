@@ -21,6 +21,7 @@ import PageInventario from '../features/inventarios/page-inventarios';
 import PageInventarioProdutos from '../features/inventarios/produtos/page-inventario-produtos';
 import HomePage from '../features/home/home-page';
 import PageRelatorioMovimentacao from '../features/movimentacoes/relatorio/page-relatorio-movimentacao';
+import PageRelatorioSaldo from '../features/saldo-produtos/relatorio/page-relatorio-saldo';
 
 const menuItens: MenuOptions[] = [
     { key: 'home', label: 'Home', icon: <HomeOutlined /> },
@@ -49,7 +50,16 @@ const menuItens: MenuOptions[] = [
         label: 'Inventários',
         icon: <ReconciliationOutlined />,
     },
-    { key: 'saldo-estoque', label: 'Saldo Estoque', icon: <DropboxOutlined /> }, // mudar icone
+    {
+        key: 'saldo',
+        label: 'Saldo',
+        icon: <SwapOutlined />,
+        children: [
+            { key: 'saldo-estoque', label: 'Estoque Atual' },
+            { key: 'saldo-estoque/relatorio', label: 'Relatório' },
+        ],
+    },
+
     { key: 'logout', label: 'Log Out', icon: <LogoutOutlined /> },
 ];
 
@@ -66,6 +76,7 @@ export default function AdminRoutes() {
             <Route path="inventarios/*" element={<PageInventario />} />
             <Route path="inventarios/:inventarioId/produtos/*" element={<PageInventarioProdutos />} />
             <Route path="saldo-estoque" element={<PageSaldoProduto />} />
+            <Route path="saldo-estoque/relatorio" element={<PageRelatorioSaldo />} />
             <Route path="logout" element={<Logout />} />
             <Route path="*" element={<NotFoundRedirect to="/home" />} />
         </Route>
