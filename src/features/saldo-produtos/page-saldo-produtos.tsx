@@ -1,11 +1,8 @@
-import { Button, Input, Row, Table } from 'antd';
+import { Input, Row, Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import { PageHeader } from '@ant-design/pro-components';
 import DefaultPageContainer from '../../components/page-container.tsx/page-container';
-import { PlusOutlined } from '@ant-design/icons';
-import TableActions, { DeleteAction, EditAction } from '../../components/table-actions/table-actions';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import { SaldoProduto, TipoMovimentacao } from '../../types/interfaces';
+import { SaldoProduto } from '../../types/interfaces';
 import useListSaldo from '../../api-data/saldo/list/hook';
 
 const { Search } = Input;
