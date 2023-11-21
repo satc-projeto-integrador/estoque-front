@@ -8,6 +8,7 @@ export type UsePaginatorOptions<T> = {
     page: number;
     rpp?: number;
     fetchParams?: any;
+    defaultParams?: any;
 };
 
 type HandlePaginationChangeParams = {
@@ -22,11 +23,11 @@ type HandleFilterChangeParams = {
 const usePaginator = <T>(options: UsePaginatorOptions<T>) => {
     const [page, setPage] = useState<number>(options.page || 1);
     const [rpp, setRpp] = useState<number>(options.rpp || 10);
-    const [fetchParams, setFetchParams] = useState(options.fetchParams || 10);
+    const [fetchParams, setFetchParams] = useState(options.fetchParams);
 
     const query = useQuery(
-        [...options.queryKey, page, rpp, fetchParams],
-        () => options.fetch({ page, rpp, ...fetchParams }),
+        [...options.queryKey, page, rpp, fetchParams, options.defaultParams],
+        () => options.fetch({ page, rpp, ...options.defaultParams, ...fetchParams }),
         {
             keepPreviousData: true,
         },

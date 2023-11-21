@@ -28,14 +28,14 @@ export interface TipoMovimentacao {
 }
 
 export enum TipoMovimentacaoEnum {
-    ENTRADA = "Entrada",
-    SAIDA = "Saída",
+    ENTRADA = 'Entrada',
+    SAIDA = 'Saída',
 }
 
 export interface MovimentacaoProduto {
     valor: number;
     quantidade: number;
-    produto: { id: number }
+    produto: { id: number };
 }
 
 export interface Movimentacao {
@@ -43,11 +43,26 @@ export interface Movimentacao {
     observacao: string;
     dataMovimentacao: string | Date;
     tipoMovimentacao: { id: number } & Partial<TipoMovimentacao>;
-    movimentacaoProdutos: MovimentacaoProduto[]
+    movimentacaoProdutos: MovimentacaoProduto[];
 }
 
 export interface SaldoProduto {
     id: number;
     produto: Produto;
     quantidade: number;
+}
+export interface Inventario {
+    id: number;
+    descricao: string;
+    dataInicio: Date;
+    dataFim: Date;
+    inventarioProdutos: InventarioProduto[];
+}
+
+export interface InventarioProduto {
+    id: number;
+    produto: Produto;
+    quantidadeEstoque: number;
+    quantidadeEncontrada: number;
+    inventario: Inventario;
 }
