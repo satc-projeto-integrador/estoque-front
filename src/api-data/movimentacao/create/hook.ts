@@ -10,6 +10,7 @@ const useCreateMovimentacao = (options?: Record<string, unknown>) => {
         onSuccess: async () => {
             await queryClient.invalidateQueries('movimentacao');
             await queryClient.invalidateQueries('saldo');
+            await queryClient.invalidateQueries('relatorio-movimentacao');
             notification.success({ message: 'Movimentacao cadastrado com sucesso' });
         },
     });
