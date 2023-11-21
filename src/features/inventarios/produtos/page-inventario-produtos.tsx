@@ -1,7 +1,7 @@
 import { Button, Input, Row, Table } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import { PageHeader } from '@ant-design/pro-components';
-import { PlusOutlined } from '@ant-design/icons';
+import { CaretDownOutlined, CheckOutlined, FallOutlined, PlusOutlined, RiseOutlined } from '@ant-design/icons';
 
 import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import { useRequiredParams } from '../../../components/required-params/required-params';
@@ -54,6 +54,17 @@ export default function PageInventarioProdutos() {
             dataIndex: 'quantidadeEncontrada',
             width: '25%',
             align: 'center',
+            render: (_, row) => (
+                <p>
+                    {row.quantidadeEncontrada}
+                    {'  '}
+                    {+row.quantidadeEncontrada < +row.quantidadeEstoque ? (
+                        <FallOutlined style={{ color: 'red' }} />
+                    ) : (
+                        <CheckOutlined style={{ color: 'green' }} />
+                    )}
+                </p>
+            ),
         },
         {
             title: 'Ações',
@@ -73,13 +84,6 @@ export default function PageInventarioProdutos() {
             <PageHeader
                 onBack={() => navigate(-1)}
                 title={`Inventário: ${inventario?.descricao} - ${displayDate(inventario?.dataInicio)}`}
-                extra={
-                    [
-                        // <Button key="cadastrar" type="primary" icon={<PlusOutlined />} onClick={criar}>
-                        //     Cadastrar
-                        // </Button>,
-                    ]
-                }
             ></PageHeader>
             <DefaultPageContainer>
                 <Row style={{ marginBottom: '16px' }}>
