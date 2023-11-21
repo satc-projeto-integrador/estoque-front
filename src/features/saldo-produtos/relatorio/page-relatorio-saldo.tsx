@@ -37,7 +37,7 @@ export default function PageRelatorioSaldo() {
 
     return (
         <>
-            <PageHeader title="Relatório de Movimentacões"></PageHeader>
+            <PageHeader title="Relatório de Saldo de Produto"></PageHeader>
             <DefaultPageContainer>
                 <Row style={{ marginBottom: '16px' }} gutter={24}>
                     <Col span={4}>

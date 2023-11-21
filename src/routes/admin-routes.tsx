@@ -22,6 +22,7 @@ import PageInventarioProdutos from '../features/inventarios/produtos/page-invent
 import HomePage from '../features/home/home-page';
 import PageRelatorioMovimentacao from '../features/movimentacoes/relatorio/page-relatorio-movimentacao';
 import PageRelatorioSaldo from '../features/saldo-produtos/relatorio/page-relatorio-saldo';
+import PageUsuarios from '../features/usuarios/page-usuarios';
 
 const menuItens: MenuOptions[] = [
     { key: 'home', label: 'Home', icon: <HomeOutlined /> },
@@ -40,9 +41,9 @@ const menuItens: MenuOptions[] = [
         label: 'Movimentacoes',
         icon: <SwapOutlined />,
         children: [
-            { key: 'movimentacoes/relatorio', label: 'Relatório' },
             { key: 'tipos-movimentacao', label: 'Tipos de Movimentacão' },
             { key: 'movimentacoes', label: 'Movimentacões' },
+            { key: 'movimentacoes/relatorio', label: 'Relatório' },
         ],
     },
     {
@@ -67,7 +68,7 @@ export default function AdminRoutes() {
     return (
         <Route element={<AdminLayout menuItens={menuItens} />}>
             <Route path="home" element={<HomePage />} />
-            <Route path="usuarios" element={<ListaUsuarios />} />
+            <Route path="usuarios/*" element={<PageUsuarios />} />
             <Route path="tipos-produto/*" element={<PageTiposProdutos />} />
             <Route path="produtos/*" element={<PageProdutos />} />
             <Route path="tipos-movimentacao/*" element={<PageTiposMovimentacao />} />
